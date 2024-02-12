@@ -1,6 +1,6 @@
 # use-react-ref
 
-Thin wrapper around useState and useRef from React to better encapsulate state and simplify usage.
+Thin wrapper around useState and useRef from React to better encapsulate simplify usage of state.
 
 ## Install
 
@@ -79,7 +79,7 @@ passed in.
 `ReactState` object that has the following properties
 
 - `value`: currentValue of the `ReactState`.
-- `set(newValue)`: updates the state to the `newValue` and triggers a rerender.
-- `reset()`: resets the value to the `initialValue` passed in and triggers a rerender.
+- `set(newValue)`: updates the state on next render to the `newValue` and triggers a rerender.
+- `reset()`: resets the value on next render to the `initialValue` passed in and triggers a rerender.
 - `isInitialValue()`: returns `true` if value is the `initialValue` passed in. `false` otherwise.
 - `isEqual(otherValue)`: returns `true` if value is equal to `otherValue`. `false` otherwise.
