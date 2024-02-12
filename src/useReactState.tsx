@@ -5,21 +5,21 @@ export type SetValueType<T> = (value: ((prevState: T) => T) | T) => void;
 export interface ReactState<T> {
     reset: () => void;
     value: T;
-    setValue: SetValueType<T>;
+    set: SetValueType<T>;
     isInitialValue: () => boolean;
     isEqual: (other: T) => boolean;
 }
 
 export function useReactState<T>(initialState: T): ReactState<T> {
-    const [value, setValue]: [T, SetValueType<T>] = useState<T>(initialState);
+    const [value, set]: [T, SetValueType<T>] = useState<T>(initialState);
     return useMemo(
         () => ({
             isInitialValue(): boolean {
                 return value === initialState;
             },
-            reset: () => setValue(initialState),
+            reset: () => set(initialState),
             value,
-            setValue,
+            set,
             isEqual: (other: T) => {
                 return value === other;
             },

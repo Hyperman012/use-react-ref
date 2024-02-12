@@ -28,7 +28,7 @@ describe('use react state', () => {
 
             beforeEach(() => {
                 previousResult = renderResult.current;
-                act(() => renderResult.current.setValue(1));
+                act(() => renderResult.current.set(1));
             });
 
             it('does not update previous result', () => {
