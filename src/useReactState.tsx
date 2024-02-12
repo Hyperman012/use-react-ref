@@ -3,11 +3,11 @@ import { useMemo, useState } from 'react';
 export type SetValueType<T> = (value: ((prevState: T) => T) | T) => void;
 
 export interface ReactState<T> {
-    reset: () => void;
-    value: T;
-    set: SetValueType<T>;
-    isInitialValue: () => boolean;
     isEqual: (other: T) => boolean;
+    isInitialValue: () => boolean;
+    reset: () => void;
+    set: SetValueType<T>;
+    value: T;
 }
 
 export function useReactState<T>(initialState: T): ReactState<T> {
