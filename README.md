@@ -24,9 +24,20 @@ import { useReactState } from 'use-react-ref';
 function SayHelloOnThirdClick() {
     const counter = useReactState(0);
 
-    if (counter.isEqual(3)) return <p>Hello!</p>;
+    if (counter.isEqual(3))
+        return (
+            <>
+                <p>Hello!</p>
+                <button onClick={counter.reset}>Reset Counter</button>
+            </>
+        );
 
-    return <button onClick={() => counter.set(x => x + 1)}>Click me</button>;
+    return (
+        <>
+            <p>{`Counter: ${counter.value}`}</p>
+            <button onClick={() => counter.set(x => x + 1)}>Click me</button>
+        </>
+    );
 }
 ```
 
