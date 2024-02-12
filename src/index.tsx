@@ -1,2 +1,3 @@
-export { useReactRef } from './useReactRef';
-export { useReactState } from './useReactState';
+export * from './useReactRef';
+export * from './useReactState';
+

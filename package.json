@@ -1,13 +1,17 @@
 {
   "name": "use-react-ref",
   "version": "0.0.1",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "source": "src/index.tsx",
+  "react-native": "src/index.tsx",
   "scripts": {
     "clean": "rm -rf node_modules",
     "bundle": "tsup",
     "test": "jest"
   },
   "peerDependencies": {
-    "react": "18.2.0"
+    "react": ">=17.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",
@@ -31,5 +35,10 @@
   },
   "engines": {
     "node": ">=18"
-  }
+  },
+  "files": [
+    "dist",
+    "!dist/*.test.d.ts",
+    "src/index.tsx"
+  ]
 }
