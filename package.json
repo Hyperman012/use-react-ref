@@ -1,6 +1,6 @@
 {
-  "name": "use-react-state",
-  "version": "1.0.0",
+  "name": "use-react-ref",
+  "version": "0.0.1",
   "scripts": {
     "clean": "rm -rf node_modules",
     "bundle": "tsup",
