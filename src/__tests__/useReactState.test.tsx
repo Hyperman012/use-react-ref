@@ -4,48 +4,51 @@ import { ReactState, useReactState } from '../useReactState';
 
 describe('use react state', () => {
     describe('with counter', () => {
+        let state: ReactState<number>;
         let renderResult: { current: ReactState<number> };
 
         beforeEach(() => {
             renderResult = renderHook(() => useReactState(0)).result;
+            state = renderResult.current;
         });
 
         it('has initial value', () => {
-            expect(renderResult.current.value).toEqual(0);
+            expect(state.value).toEqual(0);
         });
 
         it('is initial value', () => {
-            expect(renderResult.current.isInitialValue()).toEqual(true);
+            expect(state.isInitialValue()).toEqual(true);
         });
 
         it('is equal to initial value', () => {
-            expect(renderResult.current.isEqual(0)).toEqual(true);
-            expect(renderResult.current.isEqual(1)).toEqual(false);
+            expect(state.isEqual(0)).toEqual(true);
+            expect(state.isEqual(1)).toEqual(false);
         });
 
         describe('set counter to 1', () => {
-            let previousResult: ReactState<number>;
+            let stateBeforeChange: ReactState<number>;
 
             beforeEach(() => {
-                previousResult = renderResult.current;
+                stateBeforeChange = renderResult.current;
                 act(() => renderResult.current.set(1));
+                state = renderResult.current;
             });
 
             it('does not update previous result', () => {
-                expect(previousResult.isInitialValue()).toEqual(true);
+                expect(stateBeforeChange.isInitialValue()).toEqual(true);
             });
 
             it('is not initial value', () => {
-                expect(renderResult.current.isInitialValue()).toEqual(false);
+                expect(state.isInitialValue()).toEqual(false);
             });
 
             it('has value of 1', () => {
-                expect(renderResult.current.value).toEqual(1);
+                expect(state.value).toEqual(1);
             });
 
             it('is equal to 1', () => {
-                expect(renderResult.current.isEqual(1)).toEqual(true);
-                expect(renderResult.current.isEqual(0)).toEqual(false);
+                expect(state.isEqual(1)).toEqual(true);
+                expect(state.isEqual(0)).toEqual(false);
             });
 
             it('resets value to initial value', () => {
