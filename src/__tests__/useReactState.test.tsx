@@ -19,6 +19,11 @@ describe('use react state', () => {
             expect(renderResult.current.isInitialValue()).toEqual(true);
         });
 
+        it('is equal to initial value', () => {
+           expect(renderResult.current.isEqual(0)).toEqual(true);
+           expect(renderResult.current.isEqual(1)).toEqual(false);
+        });
+
         describe('set counter to 1', () => {
             let previousResult: ReactState<number>;
 
@@ -37,6 +42,11 @@ describe('use react state', () => {
 
             it('has value of 1', () => {
                 expect(renderResult.current.value).toEqual(1);
+            });
+
+            it('is equal to 1', () => {
+                expect(renderResult.current.isEqual(1)).toEqual(true);
+                expect(renderResult.current.isEqual(0)).toEqual(false);
             });
 
             it('resets value to initial value', () => {
