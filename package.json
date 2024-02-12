@@ -2,6 +2,7 @@
   "name": "use-react-state",
   "version": "1.0.0",
   "scripts": {
+    "clean": "rm -rf node_modules",
     "bundle": "tsup",
     "test": "jest"
   },
