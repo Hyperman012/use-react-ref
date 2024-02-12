@@ -4,8 +4,8 @@ export interface ReactRef<T> {
     get: () => T;
     set: (value: T) => void;
     reset: () => void;
-    isEqual: (other: T) => boolean;
     isInitialValue: () => boolean;
+    isEqual: (other: T) => boolean;
     ref: React.MutableRefObject<T>;
 }
 

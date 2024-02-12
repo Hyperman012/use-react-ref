@@ -58,10 +58,10 @@ passed in.
 
 - `get()`: returns current value of the Ref.
 - `set(newValue)`: updates the current value of the Ref to the newValue.
-- `reset()`: resets the current value to the initial value passed in.
-- `isInitialValue()`: returns `true` if current value is the initial value passed in. `false` otherwise.
+- `reset()`: resets the current value to the `initialValue` passed in.
+- `isInitialValue()`: returns `true` if current value is the `initialValue` passed in. `false` otherwise.
 - `isEqual(otherValue)`: returns `true` if current value is equal to `otherValue`. `false` otherwise.
-- `ref`: returns underlying `useRef` return value `MutableRefObject`.
+- `ref`: underlying `useRef` return value `MutableRefObject`.
 
 You should only use `.ref` if another library needs the `MutableRefObject`.
 
@@ -73,3 +73,13 @@ passed in.
 #### Parameters
 
 - initialValue: Initial Value of the `ReactState`
+
+#### Returns
+
+`ReactState` object that has the following properties
+
+- `value`: currentValue of the `ReactState`.
+- `set(newValue)`: updates the state to the `newValue` and triggers a rerender.
+- `reset()`: resets the value to the `initialValue` passed in and triggers a rerender.
+- `isInitialValue()`: returns `true` if value is the `initialValue` passed in. `false` otherwise.
+- `isEqual(otherValue)`: returns `true` if value is equal to `otherValue`. `false` otherwise.
