@@ -1,4 +1,3 @@
-import React from 'react';
 import { beforeEach, describe, expect, it } from '@jest/globals';
 import { act, renderHook } from '@testing-library/react';
 import { ReactState, useReactState } from '../useReactState';
@@ -20,8 +19,8 @@ describe('use react state', () => {
         });
 
         it('is equal to initial value', () => {
-           expect(renderResult.current.isEqual(0)).toEqual(true);
-           expect(renderResult.current.isEqual(1)).toEqual(false);
+            expect(renderResult.current.isEqual(0)).toEqual(true);
+            expect(renderResult.current.isEqual(1)).toEqual(false);
         });
 
         describe('set counter to 1', () => {

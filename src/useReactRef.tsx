@@ -5,6 +5,7 @@ export interface ReactRef<T> {
     reset: () => void;
     getValue: () => T;
     setValue: (value: T) => void;
+    isEqual: (other: T) => boolean;
     ref: React.MutableRefObject<T>;
 }
 
@@ -22,6 +23,9 @@ export function useReactRef<T>(initialValue: T): ReactRef<T> {
             getValue: () => ref.current,
             setValue: (value: T) => {
                 ref.current = value;
+            },
+            isEqual: (other: T) => {
+                return ref.current == other;
             },
         }),
         [],
