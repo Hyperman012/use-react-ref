@@ -2,11 +2,11 @@ import { useMemo, useRef } from 'react';
 
 export interface ReactRef<T> {
     get: () => T;
+    set: (value: T) => void;
+    reset: () => void;
     isEqual: (other: T) => boolean;
     isInitialValue: () => boolean;
     ref: React.MutableRefObject<T>;
-    reset: () => void;
-    set: (value: T) => void;
 }
 
 export function useReactRef<T>(initialValue: T): ReactRef<T> {
