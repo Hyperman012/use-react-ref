@@ -83,3 +83,18 @@ passed in.
 - `reset()`: resets the value on next render to the `initialValue` passed in and triggers a rerender.
 - `isInitialValue()`: returns `true` if value is the `initialValue` passed in. `false` otherwise.
 - `isEqual(otherValue)`: returns `true` if value is equal to `otherValue`. `false` otherwise.
+
+## Testing
+
+We have included `createStubReactRef` and `createStubReactState` to help with unit tests around components that are
+being passed these as props.
+
+To hook it up with a tool like jest. Here is how you would wrap the simple stub provided.
+
+```typescript jsx
+import { createStubReactState } from 'use-react-ref';
+
+export function createSpyReactState<T>(value: T, set: SetValueType<T> = jest.fn()): ReactState<T> {
+    return createStubReactState(value, set)
+}
+```
