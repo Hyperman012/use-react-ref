@@ -1,6 +1,7 @@
 {
   "name": "use-react-ref",
-  "version": "1.0.1",
+  "description": "Intention-Revealing Extensions to State Management in React & React Native",
+  "version": "1.0.2",
   "author": "Adam Whaley & Kody Fintak",
   "repository": "https://github.com/Hyperman012/use-react-ref",
   "main": "dist/index.js",

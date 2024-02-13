@@ -1,6 +1,6 @@
 # use-react-ref
 
-Thin wrapper around useState and useRef from React to better encapsulate simplify usage of state.
+Intention-Revealing Extensions to State Management in React & React Native
 
 ## Install
 
