@@ -1,6 +1,8 @@
 {
   "name": "use-react-ref",
-  "version": "1.0.0",
+  "version": "1.0.1",
+  "author": "Adam Whaley & Kody Fintak",
+  "repository": "https://github.com/Hyperman012/use-react-ref",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "source": "src/index.tsx",
