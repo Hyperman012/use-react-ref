@@ -3,6 +3,7 @@
   "description": "Intention-Revealing Extensions to State Management in React & React Native",
   "version": "1.0.2",
   "author": "Adam Whaley & Kody Fintak",
+  "license": "MIT",
   "repository": "https://github.com/Hyperman012/use-react-ref",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
