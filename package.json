@@ -1,14 +1,14 @@
 {
   "name": "use-react-ref",
   "description": "Intention-Revealing Extensions to State Management in React & React Native",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "author": "Adam Whaley & Kody Fintak",
   "license": "MIT",
   "repository": "https://github.com/Hyperman012/use-react-ref",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
-  "source": "src/index.tsx",
-  "react-native": "src/index.tsx",
+  "source": "dist/index.js",
+  "react-native": "dist/index.js",
   "scripts": {
     "clean": "rm -rf node_modules",
     "bundle": "tsup",
